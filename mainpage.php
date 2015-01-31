@@ -60,10 +60,46 @@
 
 <div id="pages_about" class="textContainer_about">
 <div id="myP1" class="textWord_about" data-link="first" style="display:None">
- <p>donation</p>
+	<table style = "width:100%">
+		<?php
+			Include_once("./libs/global.conf.php");
+			
+			$product = $dbc -> query ("SELECT * FROM Donation ");
+			
+			foreach ($product as $p) { ?>
+			<tr> 
+				<td> <?= $p['Image']?> </td>
+				<td> <?= $p['Name']?> </br>
+					 <?= $p['Description']?> </td>
+				<td> Price: </br>
+					<?= $p['Price']?> 
+					<Button type="button"> Add </Button>
+					</td>
+			</tr>
+			<?php
+				} 
+			?>
  </div>
 <div id="myP2" class="textWord_about" data-link="second" style="display:None">
-  <p>fundraiser</p>
+	<table style = "width:100%">
+		<?php
+			Include_once("./libs/global.conf.php");
+			
+			$product = $dbc -> query ("SELECT * FROM Fundraiser ");
+			
+			foreach ($product as $p) { ?>
+			<tr> 
+				<td> <?= $p['Image']?> </td>
+				<td> <?= $p['Name']?> </br>
+					 <?= $p['Description']?> </td>
+				<td> Price: </br>
+					<?= $p['Price']?> 
+					<Button type="button"> Add </Button>
+					</td>
+			</tr>
+			<?php
+				} 
+			?>
 </div>
 </div>
 

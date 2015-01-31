@@ -1,7 +1,15 @@
 <?php
-
+session_start();
 Include_once("./libs/global.conf.php");
+?>
 
+<!DOCTYPE html>
+<html>
+<head>
+<title>Just Cause Store Administrator Page</title>
+</head>
+
+<?php 
 /*$sql = "INSERT INTO MyGuests (firstname, lastname, email)
 VALUES ('John', 'Doe', 'john@example.com')";
 
