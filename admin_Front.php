@@ -8,9 +8,9 @@
 	Name:
 	<input type="text" name="new_name" />
 	Description:
-	<input type="textarea" name="new_description" />
+	<input type="textarea" name="new_description" rows="5" cols="100" />
 	Price:
-	<input type="text" name="new_price" />
+	<input type="text" name="new_price" /><br />
 	<input type = "submit" name ="add" Value="Add"/>
 	</fieldset>
 </div>
@@ -22,7 +22,7 @@
 			$product = $dbc -> query ("SELECT * FROM Donation");
 			foreach ($product as $p){ ?>
 				<input type="radio" name="<?= $p['ID']?>" value="<?= $p['Name']?>"/>
-				<label for ="<?= $p['ID']?>"> <?echo $p['Name']?></label>
+				<label for ="<?= $p['Name']?>"> <?= $p['Name']?></label>
 			<?php
 			}
 			?>
