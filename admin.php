@@ -29,19 +29,15 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating record: " . $conn->error;
 }
 */
-$new_pic = $_POST["add_pic"];
-$new_name = $_POST["add_name"];
-$new_description = $_POST["add_descrip"];
-$new_price = $_POST["add_price"];
-$new_stocks = $_POST["add_stocks"];
+$new_category = $_POST["category"];
+$new_pic = $_POST["new_pic"];
+$new_name = $_POST["new_name"];
+$new_description = $_POST["new_descrip"];
+$new_price = $_POST["new_price"];
+$new_stocks = $_POST["new_stocks"];
 if (isset($_POST["add"])){
-	if(isset($_POST["donation"])){
-		$dbc->query("INSERT INTO Donation("$new_name", "new_pic", "$new_description", "new_price","new_stocks")");
+		$dbc->query("INSERT INTO Donation("$category","$new_name", "new_pic", "$new_description", "new_price","new_stocks")");
 	}
-	else {
-		$dbc->query("INSERT INTO Donation("$new_name", "new_pic", "$new_description", "new_price","new_stocks")");
-	}
-}
 //need javascript to check if there is a product selected
 $current_product = $_POST["current"];
 $current_category = $_POST["category"];

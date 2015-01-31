@@ -6,11 +6,17 @@
 	Photo:
 	<input type="file" name="new_pic" accept="image/*"/> <br />
 	Name:
-	<input type="text" name="new_name" />
+	<input type="text" name="new_name" /><br />
 	Description:
-	<input type="textarea" name="new_description" rows="5" cols="100" />
+	<input type="textarea" name="new_description" rows="5" cols="100" /><br />
 	Price:
 	<input type="text" name="new_price" /><br />
+	
+	<input type="radio" name="category" Value = "Donation"/>
+	<label for="Donation">Donation Item</label>
+	<input type="radio" name="category" Value = "Fundraiser"/>
+	<label for="Fundraiser">Fundraiser Item</label><br />
+	
 	<input type = "submit" name ="add" Value="Add"/>
 	</fieldset>
 </div>
@@ -21,7 +27,7 @@
 			
 			$product = $dbc -> query ("SELECT * FROM Donation");
 			foreach ($product as $p){ ?>
-				<input type="radio" name="<?= $p['ID']?>" value="<?= $p['Name']?>"/>
+				<input type="radio" name="select_product" value="<?= $p['ID']?>"/>
 				<label for ="<?= $p['Name']?>"> <?= $p['Name']?></label>
 			<?php
 			}
