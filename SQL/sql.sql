@@ -25,12 +25,24 @@ CREATE TABLE IF NOT EXISTS `Fundraiser` (
 
 CREATE TABLE IF NOT EXISTS `Donation` (
   `DonationID` int(10) NOT NULL AUTO_INCREMENT,
-  `Name` date NOT NULL,
-  `Image` time NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Image` varchar(255) NOT NULL,
   `Description` varchar(255) NOT NULL,
   `Price` varchar(255) NOT NULL,
-  `Stocks` int(10) NOT NULL,
-  PRIMARY KEY (`ReportID`),
+  `Stocks` varchar(255) NOT NULL,
+  PRIMARY KEY (`DonationID`),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
+
+
+--
+-- Table structure for table `Donation`
+--
+
+CREATE TABLE IF NOT EXISTS `Admins` (
+  `AdminID` int(10) NOT NULL AUTO_INCREMENT,
+  `Username` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  PRIMARY KEY (`AdminID`),
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
