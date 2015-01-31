@@ -1,10 +1,13 @@
 <html>
+<link href="textContainer.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript"     src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
 .buttons {
 	text-align: center;
 }
 
-.myButton {
+.link {
 	-moz-box-shadow:inset 0px 34px 0px -15px #b54b3a;
 	-webkit-box-shadow:inset 0px 34px 0px -15px #b54b3a;
 	box-shadow:inset 0px 34px 0px -15px #b54b3a;
@@ -20,10 +23,10 @@
 	text-decoration:none;
 	text-shadow:0px -1px 0px #7a2a1d;
 }
-.myButton:hover {
+.link:hover {
 	background-color:#b34332;
 }
-.myButton:active {
+.link:active {
 	position:relative;
 	top:1px;
 }
@@ -49,11 +52,56 @@
       <p>Thank you!</p></td>
   </tr>
 </table>
-    
+
+
+<div id="menu_about">
+<a class="link" href="#about" data-link="first">
+    &nbsp;&nbsp; Donation
+</a> &#8226; 
+<a class="link" href="#about" data-link="second">Fund</a> 
+</div>
+
+<div id="pages_about" class="textContainer_about">
+<div class="textWord_about" data-link="first">
+ <p>donation</p>
+ </div>
+<div class="textWord_about" data-link="second">
+  <p>fundraiser</p>
+</div>
+</div>
+
+
+<script type="text/javascript">
+$('.textWord_about').hide();
+
+$('.link').click(function() {
+    $('.textWord_about').hide();       
+    $('.textWord_about[data-link=' + $(this).data('link') + ']').fadeIn({
+        width: '200px'
+    }, 300);
+});
+</script>
+
+<script type="text/javascript">
+$('.textWord_about').hide();
+
+$('.link').click(function() {
+    $('.textWord_about').hide();       
+    $('.textWord_about[data-link=' + $(this).data('link') + ']').fadeIn({
+        width: '200px'
+    }, 300);
+});
+</script>
+
+
+<!--
     </div>
     <div class = "buttons">
       <p><a href="donation.php" target="view_php" class="myButton">DONATION</a>
       <a href="fundraiser.php" target="view_php" class="myButton">FUNDRAISER</a></p>
 			
     </div>
+-->
+    
+    
 </html>
