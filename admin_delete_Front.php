@@ -9,7 +9,7 @@
 			$product = $dbc -> query ("SELECT * FROM Donation");
 			foreach ($product as $p){ ?>
 				<input type="radio" name="select_product" value="<?= $p['ID']?>"/>
-				<label for ="<?= $p['Name']?>"> <?= $p['Name']?></label><br>
+				<label for ="select_product"> <?= $p['Name']?></label><br>
 			<?php
 			}
 			?>

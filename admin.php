@@ -1,27 +1,6 @@
 <?php
-//session_start();
-Include_once("./libs/global.conf.php");
 
-/*$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-
-
-$sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . $conn->error;
-}
-*/
-if (isset($_POST["add"])){
+	Include_once("./libs/global.conf.php");
 	$new_category = $_POST["category"];
 	$new_name = $_POST["new_name"];
 	$new_description = $_POST["new_description"];
@@ -30,12 +9,5 @@ if (isset($_POST["add"])){
 	$pic_name = $new_name . basename($_FILES["new_pic"]["name"]);
 	move_uploaded_file($_FILES["new_pic"]["tmp_name"], $pic_name);
 	$dbc->query("INSERT INTO Donation('Category', 'Name', 'Image', 'Description', 'Price', 'Stocks') VALUES ('$new_category', '$new_name', '$pic_name', '$new_description', '$new_price', '200')");
-	}
-else{
-//need javascript to check if there is a product selected
-	$productID = $_POST['select_product'];
-	if (isset($_POST["delete"])){
-		$dbc ->query("DELETE FROM Donation WHERE ID='$productID'");
-	}
-}
+	
 ?>
