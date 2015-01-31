@@ -39,10 +39,9 @@ if (isset($_POST["add"])){
 		$dbc->query("INSERT INTO Donation("$category","$new_name", "new_pic", "$new_description", "new_price","new_stocks")");
 	}
 //need javascript to check if there is a product selected
-$current_product = $_POST["current"];
-$current_category = $_POST["category"];
+$productID = $_POST['select_product'];
 if (isset($_POST["del"])){
-	$dbc ->query("DELETE FROM $current_category WHERE Name=$current_product");
+	$dbc ->query("DELETE FROM Donation WHERE ID='$productID'");
 }
 
 
