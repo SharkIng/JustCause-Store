@@ -1,12 +1,16 @@
 <html>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<head>    
+<link href="textContainer.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript"     src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
 
 <style type="text/css">
 .buttons {
 	text-align: center;
 }
 
-.myButton {
+.link {
 	-moz-box-shadow:inset 0px 34px 0px -15px #b54b3a;
 	-webkit-box-shadow:inset 0px 34px 0px -15px #b54b3a;
 	box-shadow:inset 0px 34px 0px -15px #b54b3a;
@@ -22,10 +26,10 @@
 	text-decoration:none;
 	text-shadow:0px -1px 0px #7a2a1d;
 }
-.myButton:hover {
+.link:hover {
 	background-color:#b34332;
 }
-.myButton:active {
+.link:active {
 	position:relative;
 	top:1px;
 }
@@ -36,7 +40,9 @@
 }
 </style>
 
-	<div class = "description">
+<body>
+
+<div class = "description">
 <table width="1099" border="1">
   <tr>
     <td width="350"><img src="image/description.png" width="389" height="486"></td>
@@ -52,29 +58,68 @@
   </tr>
 </table>
     
-    </div>
+</div>
+<div id="menu_about">
+	<!-- button -->
     <div class = "buttons">
-      <p><a href="#donations" class="myButton" data-link"domation">DONATION</a>
-      <a href="#donations" class="myButton" data-link="fundraiser">FUNDRAISER</a></p>
+      <p><Button name="donationButton" onClick=showDonation();>DONATION</Button>
+      <Button name="fundButton" onClick=showFund();>FUNDRAISER</Button></p>
     </div>
 
-	<div class="textWord_about" data-link="donation">
- 		<p>Donation</p>
- 	</div>
-	<div class="textWord_about" data-link="fundraiser">
-  		<p>Fundraiser</p>
-	</div>
 
+    <!-- Panel -->
+	<div class="donationDiv" data-link="donation" style="visibility: hidden;">
+ 		<table style = "width:100%">
+		<?php
+
+			Include_once("./libs/global.conf.php");
+			$product = $dbc -> query ("SELECT * FROM Donation ");
+			
+			foreach ($product as $p) { ?>
+			<tr> 
+				<td> <?= $p['Image']?> </td>
+				<td> <?= $p['Name']?> </br>
+					 <?= $p['Description']?> </td>
+				<td> Price: </br>
+					<?= $p['Price']?> 
+					<Button type="button"> Add </Button>
+					</td>
+			</tr>
+			<?php
+				} 
+			?>
+ 	</div>
+	<div class="fundraiserDiv" data-link="fundraiser" style="visibility: hidden;">
+	<table style = "width:100%">
+		<?php
+			
+			$fundProduct = $dbc -> query ("SELECT * FROM Fundraiser ");
+			
+			foreach ($fundProduct as $fp) { ?>
+			<tr> 
+				<td> <?= $fp['Image']?> </td>
+				<td> <?= $fp['Name']?> </br>
+					 <?= $fp['Description']?> </td>
+				<td> Price: </br>
+					<?= $fp['Price']?> 
+					<Button type="button"> Add </Button>
+					</td>
+			</tr>
+			<?php
+				} 
+			?>
+	</div>
+</div>
 </html>
 
 <script type="text/javascript">
-$('.textWord_about').hide();
 
-$('.link').click(function() {
-    $('.textWord_about').hide();       
-    $('.textWord_about[data-link=' + $(this).data('link') + ']').fadeIn({
-        width: '200px'
-    }, 300);
-});
+function showDonation(){
+	document.getElementByID('donationDiv').style.visibility='visible';
+}
+
+function showFund(){
+	document.getElementByID('fundraiserDiv').style.visibility='visible';
+}
+
 </script>
-
