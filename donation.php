@@ -92,12 +92,20 @@
 	color: #350417;
 }
 
+
+.dddddd {
+	font-size: 36px;
+	color: #9F3;
+}
+.table{
+	border-style: solid;
+	}
 </style>
 <html>
         <p> <input type="button" onClick="window.open('donation.php')" value="Donation" class="link" align="center">
-        <input type="button" onClick="demoDisplay2()" value="Fundraiser" class="link" align="center"></p>
+        <input type="button" onClick="window.open('fundraiser.php')" value="Fundraiser" class="link" align="center"></p>
         
-	<table width="90%" align="center" border="1" bgcolor="#CCCCCC" bordercolor="#FFFFFF" background="#CCCCCC">
+	<table class="table" width="90%" align="center" border="1px" bgcolor="#CCCCCC" bordercolor="#FFFFFF" background="#CCCCCC">
 		<?php
 			Include_once("./libs/global.conf.php");
 			
