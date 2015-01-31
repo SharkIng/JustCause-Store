@@ -5,10 +5,10 @@
 			foreach ($product as $p) { ?>
 			<tr> 
 				<td> <?= $p['Image']?> </td>
-				<td> <?= $p['Name']?> </ br>
+				<td> <?= $p['Name']?> 
 					 <?= $p['Description']?> </td>
-				<td> Price: </ br>
-					<?= $p['Price']?> </ br>
+				<td> Price: 
+					<?= $p['Price']?> 
 					<Button type="button"> Add </Button>
 					</td>
 			</tr>
