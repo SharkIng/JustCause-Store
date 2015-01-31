@@ -56,7 +56,7 @@ if(isset($_SESSION["cart"]))
     foreach ($_SESSION["cart"] as $items)
     {
         echo '<li class="cart-itm">';
-        echo '<span class="remove-itm"><a href="cart_update.php?productsID='.$items["id"].'&return_url='.$current_url.'">&times;</a></span>';
+        echo '<span class="remove-itm"><a href="cartUpdate.php?productsID='.$items["id"].'&return_url='.$current_url.'">&times;</a></span>';
         echo '<h3>'.$items["name"].'</h3>';
         echo '<div class="p-code">P code : '.$items["id"].'</div>';
         echo '<div class="p-qty">Qty : '.$items["quantity"].'</div>';
@@ -67,7 +67,7 @@ if(isset($_SESSION["cart"]))
     }
     echo '</ol>';
     echo '<span class="check-out-txt"><strong>Total : $'.$total.'</strong> <a href="view_cart.php">Check-out!</a></span>';
-	echo '<span class="empty-cart"><a href="cart_update.php?empty=1&return='.$current_url.'">Empty Cart</a></span>';
+	echo '<span class="empty-cart"><a href="cartUpdate.php?empty=1&return='.$current_url.'">Empty Cart</a></span>';
 }else{
     echo 'Your Cart is empty';
 }
