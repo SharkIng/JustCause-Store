@@ -107,14 +107,19 @@
 			<tr class="p"> 
 				<td class="image" width="20%"> <?= $p['Image']?> </td>
 				<td width="40%"> 
-                	<tr class="name"><?= $p['Name']?> </tr>
-					<tr class="des"><?= $p['Description']?> </tr></td>
-				<td width="30%"> <tr class="price">Price: </tr>
+                <table border="0">
+               	  <tr class="name"><?= $p['Name']?> </tr>
+					<tr class="des"><?= $p['Description']?> </tr></table></td>
+				<td width="30%"> 
+                <table border="0">
+                <tr class="price">Price: </tr>
 					<tr class="priceN"><?= $p['Price']?> </tr>
 					<tr><Button type="button" class="AddButton"> Add to Cart</Button></tr>
-					</td>
+                  </table>
+			  </td>
 			</tr>
 			<?php
 				} 
 			?>
+        </table>
 </html>
