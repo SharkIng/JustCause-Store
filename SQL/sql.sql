@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `Fundraiser` (
   `Description` varchar(255) NOT NULL,
   `Price` varchar(255) NOT NULL,
   `Stocks` varchar(255) NOT NULL,
-  PRIMARY KEY (`FundraiserID`),
+  PRIMARY KEY (`FundraiserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `Donation` (
   `Description` varchar(255) NOT NULL,
   `Price` varchar(255) NOT NULL,
   `Stocks` varchar(255) NOT NULL,
-  PRIMARY KEY (`DonationID`),
+  PRIMARY KEY (`DonationID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -44,5 +44,5 @@ CREATE TABLE IF NOT EXISTS `Admins` (
   `AdminID` int(10) NOT NULL AUTO_INCREMENT,
   `Username` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
-  PRIMARY KEY (`AdminID`),
+  PRIMARY KEY (`AdminID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
