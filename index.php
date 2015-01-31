@@ -19,7 +19,7 @@ include_once("./libs/global.conf.php");
     //current URL of the Page. cart_update.php redirects back to this URL
 	$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
     
-	$results = $dbc->query("SELECT * FROM Donation ORDER BY ID ASC");
+	$results = $dbc->query("SELECT * FROM Donation ORDER BY DonationID ASC");
     if ($results) { 
 	
         //fetch results set as object and output HTML
@@ -35,7 +35,7 @@ include_once("./libs/global.conf.php");
             echo 'Qty <input type="text" name="quantity" value="1" size="3" />';
 			echo '<button class="add_to_cart">Add To Cart</button>';
 			echo '</div></div>';
-            echo '<input type="hidden" name="productsID" value="'.$obj->ID.'" />';
+            echo '<input type="hidden" name="productsID" value="'.$obj->DonationID.'" />';
             echo '<input type="hidden" name="type" value="add" />';
 			echo '<input type="hidden" name="return" value="'.$current_url.'" />';
             echo '</form>';
