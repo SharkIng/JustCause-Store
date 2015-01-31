@@ -1,19 +1,15 @@
 <html>
 	<div class = "description">
 		<div class = "Donation">
-			donation
+			<button type="button"> Donation </button>
+			<a href="donation.php" target="view_php" >donation</a>
+
 		</div>
 		<div class = "Fundraiser">
-			fundraiser
+			<button type = "button" name ="fund_button"> Fundraiser </button>
+			<a href="fundraiser.php" target="view_php" >Fundraiser</a>
 		</div>
 	</div>
-	<div class = "display_php">
-		<frameset>
-			<frame src="donation.php" name = "view_php">
-			store display
-		</frameset>
-	</div>
-		
-
+	
 
 </html>
