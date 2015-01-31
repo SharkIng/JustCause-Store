@@ -1,8 +1,8 @@
 <html>
-		<frameset rows="200,*">
+		<frameset rows="*,*">
 			<frame src="description.php">
 			<frame src="donation.php" name = "view_php">
 			
-		</frameset>
+		</frameset><noframes></noframes>
 </html>
 		
