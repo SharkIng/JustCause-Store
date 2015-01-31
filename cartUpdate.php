@@ -17,7 +17,7 @@ if (isset($_POST["type"]) && $_POST["type"] == 'add') {
 	$return_url 	= base64_decode($_POST["return"]); //Return URL
 	
 	//Database Query to get detail price and information about products
-	$sql="SELECT Name,Price FROM Donation WHERE ID = '$id' LIMIT 1";
+	$sql="SELECT Name,Price FROM Donation WHERE DonationID = '$id' LIMIT 1";
 	$results = $dbc->query($sql);
 	$obj = $results->fetch_object();
 	
