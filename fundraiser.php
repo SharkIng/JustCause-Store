@@ -3,7 +3,7 @@
 		<?php
 			Include_once("./libs/global.conf.php");
 			
-			$product = $dbc -> query ("SELECT * FROM Fundrasier ");
+			$product = $dbc -> query ("SELECT * FROM Fundraiser ");
 			
 			foreach ($product as $p) { ?>
 			<tr> 

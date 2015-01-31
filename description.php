@@ -1,4 +1,6 @@
 <html>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
 <style type="text/css">
 .buttons {
 	text-align: center;
@@ -52,8 +54,27 @@
     
     </div>
     <div class = "buttons">
-      <p><a href="donation.php" target="view_php" class="myButton">DONATION</a>
-      <a href="fundraiser.php" target="view_php" class="myButton">FUNDRAISER</a></p>
-			
+      <p><a href="#donations" class="myButton" data-link"domation">DONATION</a>
+      <a href="#donations" class="myButton" data-link="fundraiser">FUNDRAISER</a></p>
     </div>
+
+	<div class="textWord_about" data-link="donation">
+ 		<p>Donation</p>
+ 	</div>
+	<div class="textWord_about" data-link="fundraiser">
+  		<p>Fundraiser</p>
+	</div>
+
 </html>
+
+<script type="text/javascript">
+$('.textWord_about').hide();
+
+$('.link').click(function() {
+    $('.textWord_about').hide();       
+    $('.textWord_about[data-link=' + $(this).data('link') + ']').fadeIn({
+        width: '200px'
+    }, 300);
+});
+</script>
+
