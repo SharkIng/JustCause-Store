@@ -30,18 +30,20 @@ if ($conn->query($sql) === TRUE) {
 }
 */
 $new_category = $_POST["category"];
-$new_pic = $_POST["new_pic"];
 $new_name = $_POST["new_name"];
 $new_description = $_POST["new_description"];
 $new_price = $_POST["new_price"];
 //$new_stocks = $_POST["new_stocks"];
+$pic_name = $new_name . basename($_FILES["new_pic"]["name"]);
+move_uploaded_file($_FILES["new_pic"]["tmp_name"], $pic_name);
 if (isset($_POST["add"])){
-		$dbc->query("INSERT INTO Donation('Category', 'Name', 'Image', 'Description', 'Price', 'Stocks') VALUES ('$new_category', '$new_name', '$new_pic', '$new_description', '$new_price', '200')");
+		$dbc->query("INSERT INTO Donation('Category', 'Name', 'Image', 'Description', 'Price', 'Stocks') VALUES ('$new_category', '$new_name', '$pic_name', '$new_description', '$new_price', '200')");
 	}
+else{
 //need javascript to check if there is a product selected
-$productID = $_POST['select_product'];
-if (isset($_POST["del"])){
-	$dbc ->query("DELETE FROM Donation WHERE ID='$productID'");
+	$productID = $_POST['select_product'];
+	if (isset($_POST["del"])){
+		$dbc ->query("DELETE FROM Donation WHERE ID='$productID'");
 }
 
 
