@@ -37,8 +37,11 @@
 	font-size: medium;
 	}
 .priceN{
-	front-size:350%;
-	text-align:center
+	front-size: 350%;
+	text-align: center;
+	font-weight: bold;
+	color: #F63;
+	font-size: x-large;
 	}
 .image{
 	max-height:30%		
@@ -119,14 +122,14 @@ session_start();
 			<?php
 			foreach ($product as $p) { ?>
 			<tr class="p"> 
-				<td class="image" width="30%"> <img src="<?= $p['Image']?>" /> </td>
+				<td class="image" width="30%"> <img src="<?= $p['Image']?>" width="100%" /> </td>
 				<td width="40%"> 
-                <table border="0">
-               	  <tr> <td class="name"><input type="radio" name="productsID" value="<?= $p['ID']?>"/>
+                <table border="0px" width="100%" height="100%">
+               	  <tr> <td class="name"  ><input type="radio" name="productsID" value="<?= $p['ID']?>"/>
 				  <label for ="productsID"> <?= $p['Name']?></label> </td></tr>
 					<tr><td class="des"><?= $p['Description']?> </td></tr></table></td>
-				<td width="20%"> 
-                <table border="0">
+				<td width="30%"> 
+                <table border="0" width="100%" height="100%">
                 <tr><td class="price">Price: </td></tr>
 					<tr>
 					  <td class="priceN">$<?= $p['Price']?> CAD</td> </tr>
@@ -138,8 +141,10 @@ session_start();
 				} 
 			?>
 			</form>
+
+        </table>
 <div class="shopping-cart">
-<h2>Your Shopping Cart</h2>
+<p>Your Shopping Cart</p>
 <?php
 if(isset($_SESSION["cart"]))
 {
@@ -165,5 +170,4 @@ if(isset($_SESSION["cart"]))
 }
 ?>
 </div>
-        </table>
-</html>
+	<p>&nbsp;</p></html>
