@@ -119,24 +119,25 @@ session_start();
 			<?php
 			foreach ($product as $p) { ?>
 			<tr class="p"> 
-				<td class="image" width="20%"> <?= $p['Image']?> </td>
+				<td class="image" width="30%"> <img src="<?= $p['Image']?>" /> </td>
 				<td width="40%"> 
                 <table border="0">
-               	  <tr class="name"><input type="radio" name="productsID" value="<?= $p['ID']?>"/>
-				  <label for ="productsID"> <?= $p['Name']?></label> </tr>
-					<tr class="des"><?= $p['Description']?> </tr></table></td>
-				<td width="30%"> 
+               	  <tr> <td class="name"><input type="radio" name="productsID" value="<?= $p['ID']?>"/>
+				  <label for ="productsID"> <?= $p['Name']?></label> </td></tr>
+					<tr><td class="des"><?= $p['Description']?> </td></tr></table></td>
+				<td width="20%"> 
                 <table border="0">
-                <tr class="price">Price: </tr>
-					<tr class="priceN"><?= $p['Price']?> </tr>
-					<tr><input type="submit" value = "Add to Cart" class="AddButton"/></tr>
+                <tr><td class="price">Price: </td></tr>
+					<tr>
+					  <td class="priceN">$<?= $p['Price']?> CAD</td> </tr>
+					<tr><td><input type="submit" value = "Add to Cart" class="AddButton"/></td></tr>
                   </table>
 			  </td>
 			</tr>
 			<?php
 				} 
 			?>
-			
+			</form>
 <div class="shopping-cart">
 <h2>Your Shopping Cart</h2>
 <?php
