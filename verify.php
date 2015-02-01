@@ -19,13 +19,13 @@ if(isset($_POST['submit'])){
     $results = $query -> fetch_array();
 
     if(empty($results)){ 
-        header("Location: login.php"); 
+        header("Location: mainpage.php"); 
         exit; 
     }else{ 
         session_start(); 
         $_SESSION['username'] = $results -> Username; 
         $_SESSION['logged'] = TRUE; 
-        header("Location: admin_index.php"); // Modify to go to the page you would like 
+        header("Location: admin_index.html"); // Modify to go to the page you would like 
         exit; 
     } 
 }else{    //If the form button wasn't submitted go to the index page, or login page 

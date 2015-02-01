@@ -130,13 +130,15 @@
 
 </style>
 
-<table width="90%" border="0" align="center">
+<div align="center"><img src="./images/logo.png" width="80%" height="180" align="center"></div>
+
+<table width="80%" border="0" align="center">
   <tr>
-    <td width="30%"><img src="../image/description.png" width="389" height="486"></td>
+    <td width="30%"><img src="./images/description.png" width="389" height="486"></td>
     <td width="60%">
       <p>
-        <input type="button" onClick="window.open('donation.php')" value="Donation" class="link" align="center">
-        <input type="button" onClick="demoDisplay2()" value="Fundraiser" class="link" align="center">
+        <input type="button" onClick="window.open('index.php')" value="Donation" class="link" align="center">
+        <input type="button" onClick="window.open('FundIndex.php')" value="Fundraiser" class="link" align="center">
       </p>
 <p>
         <input type="image" style="border: 0px; width: 92px; height:26px" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Donate"> 

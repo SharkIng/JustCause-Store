@@ -8,6 +8,11 @@
 	//$new_stocks = $_POST["new_stocks"];
 	$pic_name = "./images/products/" . $new_name . basename($_FILES["new_pic"]["name"]);
 	move_uploaded_file($_FILES["new_pic"]["tmp_name"], $pic_name);
-	$dbc->query("INSERT INTO Donation('Category', 'Name', 'Image', 'Description', 'Price', 'Stocks') VALUES ('$new_category', '$new_name', '$pic_name', '$new_description', '$new_price', '200')");
+	$dbc->query("INSERT INTO Donation (Category, Name, Image, Description, Price, Stocks) VALUES ('$new_category', '$new_name', '$pic_name', '$new_description', '$new_price', '200')");
 	
 ?>
+
+	<html>
+Your change has been saved!
+	<a href="./admin_index.html">Go Back</a>
+	</html>

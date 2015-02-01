@@ -115,7 +115,7 @@ session_start();
 			Include_once("./libs/global.conf.php");
 			$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 			$product = $dbc -> query ("SELECT * FROM Donation WHERE category = 'donation'");?>
-			<form action="cartUpdate.php" enctype="multipart/form-data" method="post">
+			<form action="cartUpdate.php" method="post">
 			<?php
 			foreach ($product as $p) { ?>
 			<tr class="p"> 
@@ -123,8 +123,6 @@ session_start();
 				<td width="40%"> 
                 <table border="0">
                	  <tr class="name"><b><?= $p['Name']?></b></tr></br>
-               	  <tr class="name"><input type="radio" name="productsID" value="<?= $p['ID']?>"/>
-				  <label for ="productsID"> <?= $p['Name']?></label> </tr>
 					<tr class="des"><?= $p['Description']?> </tr></table></td>
 				<td width="30%"> 
                 <table border="0">
@@ -132,6 +130,8 @@ session_start();
 					<tr class="priceN"><?= $p['Price']?> </tr>
 					<input type="hidden" name="type" value="add" />
 					<input type="hidden" name="return" value="<?= $current_url ?>" />
+					<input type="hidden" name="productsID" value="<?= $p['ID'] ?>" />
+					<input type="text" name="quantity" value="1" size="3" />
 					<tr><input type="submit" value = "Add to Cart" class="AddButton"/></tr>
                   </table>
 			  </td>

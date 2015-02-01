@@ -12,8 +12,8 @@ if(isset($_GET["empty"]) && $_GET["empty"] != 0){
 
 // Add item to shopping cart
 if (isset($_POST["type"]) && $_POST["type"] == 'add') {
-	$id 	= filter_var($_POST["productsID"], FILTER_SANITIZE_STRING); //Product ID
-	$qty 	= filter_var($_POST["quantity"], FILTER_SANITIZE_NUMBER_INT); //Product Quantity
+	$id 	= $_POST["productsID"]; //Product ID
+	$qty 	= $_POST["quantity"]; //Product Quantity
 	$return_url 	= base64_decode($_POST["return"]); //Return URL
 	
 	//Database Query to get detail price and information about products

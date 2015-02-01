@@ -5,5 +5,9 @@
 	}
 	$dbc ->query("DELETE FROM Donation WHERE ID='$productID'");
 	?>
-	
+
+	<html>
+Your change has been saved!
+	<a href="./admin_index.html">Go Back</a>
+	</html>
 	
