@@ -113,10 +113,10 @@
 			
 			foreach ($product as $p) { ?>
 			<tr class="p"> 
-				<td class="image" width="20%"> <?= $p['Image']?> </td>
+				<td class="image" width="20%"> <img src="<?= $p['Image']?>" width="100%"></td>
 				<td width="40%"> 
                 <table border="0">
-               	  <tr class="name"><?= $p['Name']?> </tr>
+               	  <tr class="name"><b><?= $p['Name']?></b></tr></br>
 					<tr class="des"><?= $p['Description']?> </tr></table></td>
 				<td width="30%"> 
                 <table border="0">

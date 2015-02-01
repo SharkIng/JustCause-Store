@@ -19,7 +19,7 @@ include_once("./libs/global.conf.php");
     //current URL of the Page. cart_update.php redirects back to this URL
 	$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
     
-	$results = $dbc->query("SELECT * FROM Donation ORDER BY DonationID ASC");
+	$results = $dbc->query("SELECT * FROM Donation ORDER BY ID ASC");
     if ($results) { 
 	
         //fetch results set as object and output HTML
@@ -35,13 +35,12 @@ include_once("./libs/global.conf.php");
             echo 'Qty <input type="text" name="quantity" value="1" size="3" />';
 			echo '<button class="add_to_cart">Add To Cart</button>';
 			echo '</div></div>';
-            echo '<input type="hidden" name="productsID" value="'.$obj->DonationID.'" />';
+            echo '<input type="hidden" name="productsID" value="'.$obj->ID.'" />';
             echo '<input type="hidden" name="type" value="add" />';
 			echo '<input type="hidden" name="return" value="'.$current_url.'" />';
             echo '</form>';
             echo '</div>';
         }
-    
     }
     ?>
     </div>
@@ -66,7 +65,7 @@ if(isset($_SESSION["cart"]))
         $total = ($total + $subtotal);
     }
     echo '</ol>';
-    echo '<span class="check-out-txt"><strong>Total : $'.$total.'</strong> <a href="view_cart.php">Check-out!</a></span>';
+    echo '<span class="check-out-txt"><strong>Total : $'.$total.'</strong> <a href="viewCart.php">Check-out!</a></span>';
 	echo '<span class="empty-cart"><a href="cartUpdate.php?empty=1&return='.$current_url.'">Empty Cart</a></span>';
 }else{
     echo 'Your Cart is empty';
