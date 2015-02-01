@@ -110,8 +110,8 @@ session_start();
 ?>
 <html>
 
-        <p> <input type="button" onClick="window.open('donation.php')" value="Donation" class="link" align="center">
-        <input type="button" onClick="window.open('fundraiser.php')" value="Fundraiser" class="link" align="center"></p>
+        <div align="center"> <input type="button" onClick="window.open('donation.php')" value="Donation" class="link" align="center">
+        <input type="button" onClick="window.open('fundraiser.php')" value="Fundraiser" class="link" align="center"></div>
         
 	<table class="table" width="90%" align="center" border="1px" bgcolor="#CCCCCC" bordercolor="#FFFFFF" background="#CCCCCC">
 		<?php
