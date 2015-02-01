@@ -25,11 +25,11 @@ if(isset($_POST['submit'])){
         session_start(); 
         $_SESSION['username'] = $results -> Username; 
         $_SESSION['logged'] = TRUE; 
-        header("Location: admin.php"); // Modify to go to the page you would like 
+        header("Location: admin_index.php"); // Modify to go to the page you would like 
         exit; 
     } 
 }else{    //If the form button wasn't submitted go to the index page, or login page 
-    header("Location: index.php");     
+    header("Location: mainpage.php");     
     exit; 
 } 
 ?>

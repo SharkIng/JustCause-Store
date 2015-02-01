@@ -101,33 +101,43 @@
 	border-style: solid;
 	}
 </style>
+
+<?php
+session_start();
+?>
 <html>
+
         <p> <input type="button" onClick="window.open('donation.php')" value="Donation" class="link" align="center">
         <input type="button" onClick="window.open('fundraiser.php')" value="Fundraiser" class="link" align="center"></p>
         
 	<table class="table" width="90%" align="center" border="1px" bgcolor="#CCCCCC" bordercolor="#FFFFFF" background="#CCCCCC">
 		<?php
 			Include_once("./libs/global.conf.php");
-			
-			$product = $dbc -> query ("SELECT * FROM Donation WHERE category = 'donation'");
-			
+			$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+			$product = $dbc -> query ("SELECT * FROM Donation WHERE category = 'donation'");?>
+			<form action="cartUpdate.php" enctype="multipart/form-data" method="post">
+			<?php
 			foreach ($product as $p) { ?>
 			<tr class="p"> 
 				<td class="image" width="20%"> <img src="<?= $p['Image']?>" width="100%"></td>
 				<td width="40%"> 
                 <table border="0">
                	  <tr class="name"><b><?= $p['Name']?></b></tr></br>
+               	  <tr class="name"><input type="radio" name="productsID" value="<?= $p['ID']?>"/>
+				  <label for ="productsID"> <?= $p['Name']?></label> </tr>
 					<tr class="des"><?= $p['Description']?> </tr></table></td>
 				<td width="30%"> 
                 <table border="0">
                 <tr class="price">Price: </tr>
 					<tr class="priceN"><?= $p['Price']?> </tr>
-					<tr><Button type="button" class="AddButton"> Add to Cart</Button></tr>
+					<input type="hidden" name="type" value="add" />
+					<input type="hidden" name="return" value="<?= $current_url ?>" />
+					<tr><input type="submit" value = "Add to Cart" class="AddButton"/></tr>
                   </table>
 			  </td>
 			</tr>
 			<?php
 				} 
 			?>
-        </table>
+
 </html>
